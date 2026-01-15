@@ -50,6 +50,10 @@ public:
     this->factumSize++;
     return;
   };
+  S at(int index) // возвр. элем-т по индексу;
+  {
+    return this->customArray[index];
+  }
 
 protected:
   S *customArray;
@@ -67,9 +71,6 @@ int main()
   {
     cout << "Elementov v kontejnere: " << myVector.size() << endl;
     cout << "Do novogo vyideleniya pamyati ostalos: " << myVector.capacity() << endl;
-    int element = 0;
-    cout << "vvodim element: ";
-    cin >> element;
     char symbol = ' ';
     cout << "prervat`? Y / N: ";
     cin >> symbol;
@@ -77,11 +78,18 @@ int main()
     {
       break;
     };
+    int element = 0;
+    cout << "vvodim element: ";
+    cin >> element;
     myVector.push_back(element);
     for (int i = 0; i < myVector.size(); ++i)
     {
       cout << myVector[i] << endl;
     };
+    int index = 0;
+    cout << "Vvodim indeks: ";
+    cin >> index;
+    cout << "Element vectora po indeksu \"" << index << "\" raven: " << myVector.at(index) << endl;
   };
   /*----------------------------*/
   cout << endl;
@@ -92,9 +100,6 @@ int main()
   {
     cout << "Elementov v kontejnere: " << doubleVector.size() << endl;
     cout << "Do novogo vyideleniya pamyati ostalos: " << doubleVector.capacity() << endl;
-    double element = 0;
-    cout << "vvodim element: ";
-    cin >> element;
     char symbol = ' ';
     cout << "prervat`? Y / N: ";
     cin >> symbol;
@@ -102,11 +107,18 @@ int main()
     {
       break;
     };
+    double element = 0;
+    cout << "vvodim element: ";
+    cin >> element;
     doubleVector.push_back(element);
     for (int i = 0; i < doubleVector.size(); ++i)
     {
       cout << doubleVector[i] << endl;
     };
+    int index = 0;
+    cout << "Vvodim indeks: ";
+    cin >> index;
+    cout << "Element vectora po indeksu \"" << index << "\" raven: " << doubleVector.at(index) << endl;
   };
   return 0;
 }
